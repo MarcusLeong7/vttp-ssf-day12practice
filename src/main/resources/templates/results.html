@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+
+    <h1>Result Generated</h1>
+    <h2 data-th-text = "${message}"> Here is the list of numbers</h2>
+
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* Makes images wrap to the next line if they exceed the width */
+            gap: 10px; /* Adds spacing between images */
+        }
+        .image-container img {
+            width: 200px; /* Set width for uniform size */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+    
+    <div class="image-container">
+        <div th:each="image : ${randomPicture}">
+            <img th:src=" ${image}" alt="Image not found">
+        </div>
+    </div>
+    
+</body>
+</html>
